@@ -1,0 +1,966 @@
+[Qase][22:09:54][debug] Config: {
+    "debug": true,
+    "environment": "local",
+    "exclude_params": [],
+    "execution_plan": {
+        "path": "./build/qase-execution-plan.json"
+    },
+    "fallback": "report",
+    "framework": {
+        "playwright": {
+            "output_dir": "test-results",
+            "trace": "on",
+            "video": "on"
+        },
+        "pytest": {
+            "capture_logs": true,
+            "xfail_status": {
+                "xfail": "skipped",
+                "xpass": "passed"
+            }
+        }
+    },
+    "mode": "testops",
+    "profilers": [
+        "network",
+        "sleep"
+    ],
+    "report": {
+        "connection": {
+            "format": "json",
+            "path": "./build/qase-report"
+        },
+        "driver": "local"
+    },
+    "testops": {
+        "api": {
+            "host": "qase.io",
+            "token": "7b2c180e4c96555e7e77d2f18e51cef2c4a0ad40ff94ef60f212c72826973cdd"
+        },
+        "batch": {
+            "size": 100
+        },
+        "defect": false,
+        "plan": {},
+        "project": "TD",
+        "run": {
+            "complete": true,
+            "id": 115,
+            "tags": [],
+            "title": "pytestrun"
+        }
+    }
+}
+[Qase][22:09:54][debug] Host data: {'system': 'darwin', 'machineName': 'Ankitas-MacBook-Air.local', 'release': '24.5.0', 'version': '15.5', 'arch': 'arm64', 'python': '3.13.3', 'pip': '24.3.1', 'framework': '8.3.4', 'reporter': '6.3.3', 'commons': '3.5.0', 'apiClientV1': '1.2.1', 'apiClientV2': '1.2.1'}
+[Qase][22:09:54][debug] Preparing API client
+[Qase][22:09:54][debug] API client prepared
+[Qase][22:09:54][debug] Preparing API V2 client
+[Qase][22:09:54][debug] API V2 client prepared
+[Qase][22:09:54][debug] Getting environment local
+[Qase][22:09:56][debug] Environment local not found
+[Qase][22:09:56][debug] Getting project TD
+[Qase][22:09:56][debug] Project TD found: {"title": "test-demo", "code": "TD", "counts": {"cases": 116, "suites": 69, "milestones": 0, "runs": {"total": 157, "active": 65}, "defects": {"total": 3, "open": 3}}}
+[Qase][22:09:56][debug] Starting run
+[Qase][22:09:56][debug] Run ID: 115
+[Qase][22:10:02][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-has-title-chromium/video.webm",
+            "id": "fc9c4b0e-91d8-41be-9c48-b9a9e052b7be",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-has-title-chromium/trace.zip",
+            "id": "ce3d241e-0ed5-4a9e-a812-b7aeb31aef2c",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 5624,
+        "end_time": 1751560802.489015,
+        "stacktrace": null,
+        "start_time": 1751560796.8645608,
+        "status": "passed",
+        "thread": "77644-MainThread"
+    },
+    "fields": {},
+    "id": "cd491a2e-78f1-4ec2-b531-efc7063bc659",
+    "message": null,
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_has_title[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_has_title"
+}
+[Qase][22:10:02][debug] Result test_has_title added
+[Qase][22:10:10][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-get-started-link-chromium/video.webm",
+            "id": "81d5bd8b-130f-4cfd-a84f-eeefdcb95012",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-get-started-link-chromium/trace.zip",
+            "id": "97e872f8-2404-47d5-a794-53a6599b114b",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 8150,
+        "end_time": 1751560810.640105,
+        "stacktrace": "page = <Page url='https://playwright.dev/docs/intro'>\n\n    def test_get_started_link(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: typo in heading name\n        page.get_by_role(\"link\", name=\"Get started\").click()\n>       expect(page.get_by_role(\"heading\", name=\"Instalation\")).to_be_visible()  # typo\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_role(\"heading\", name=\"Instalation\")\n\ntests/test_example.py:15: AssertionError",
+        "start_time": 1751560802.489407,
+        "status": "failed",
+        "thread": "77644-MainThread"
+    },
+    "fields": {},
+    "id": "47388ea1-d7b8-4a1c-a3e3-8e6772f73da2",
+    "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_role(\"heading\", name=\"Instalation\")",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_get_started_link[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_get_started_link"
+}
+[Qase][22:10:10][info] See why this test failed: https://app.qase.io/run/TD/dashboard/115?source=logs&status=%5B2%5D&search=test_get_started_link
+[Qase][22:10:10][debug] Result test_get_started_link added
+[Qase][22:10:19][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-wrong-url-chromium/video.webm",
+            "id": "7a702991-e335-4256-998a-2721bcd52a3c",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-wrong-url-chromium/trace.zip",
+            "id": "253ed493-27f8-4e9c-a7f1-c15022356c38",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 8428,
+        "end_time": 1751560819.069509,
+        "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_wrong_url(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: wrong URL assertion\n>       expect(page).to_have_url(\"https://example.com\")  # wrong URL\nE       AssertionError: Page URL expected to be 'https://example.com'\nE       Actual value: https://playwright.dev/ \nE       Call log:\nE         - PageAssertions.to_have_url with timeout 5000ms\nE         -   - waiting for locator(\":root\")\nE         -     9 \u00d7 locator resolved to <html lang=\"en\" dir=\"ltr\" data-theme=\"light\" data-has-hydrated=\"true\" data-theme-choice=\"system\" class=\"plugin-pages plugin-id-default\" data-rh=\"lang,dir,class,data-has-hydrated\">\u2026</html>\nE         -       - unexpected value \"https://playwright.dev/\"\n\ntests/test_example.py:21: AssertionError",
+        "start_time": 1751560810.640706,
+        "status": "failed",
+        "thread": "77644-MainThread"
+    },
+    "fields": {},
+    "id": "3b24f8ca-fd1a-4049-bece-8129d427c2ae",
+    "message": "AssertionError: Page URL expected to be 'https://example.com'\nActual value: https://playwright.dev/ \nCall log:\n  - PageAssertions.to_have_url with timeout 5000ms\n  -   - waiting for locator(\":root\")\n  -     9 \u00d7 locator resolved to <html lang=\"en\" dir=\"ltr\" data-theme=\"light\" data-has-hydrated=\"true\" data-theme-choice=\"system\" class=\"plugin-pages plugin-id-default\" data-rh=\"lang,dir,class,data-has-hydrated\">\u2026</html>\n  -       - unexpected value \"https://playwright.dev/\"",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_fail_wrong_url[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_fail_wrong_url"
+}
+[Qase][22:10:19][info] See why this test failed: https://app.qase.io/run/TD/dashboard/115?source=logs&status=%5B2%5D&search=test_fail_wrong_url
+[Qase][22:10:19][debug] Result test_fail_wrong_url added
+[Qase][22:10:27][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-element-not-found-chromium/video.webm",
+            "id": "cd8e657e-71a4-4487-add5-573bb0932ca8",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-element-not-found-chromium/trace.zip",
+            "id": "e75dcf35-8a21-46c0-8d27-f563afee66de",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 8124,
+        "end_time": 1751560827.195007,
+        "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_element_not_found(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: element that doesn't exist\n>       expect(page.get_by_text(\"Nonexistent Text\")).to_be_visible()\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_text(\"Nonexistent Text\")\n\ntests/test_example.py:27: AssertionError",
+        "start_time": 1751560819.070085,
+        "status": "failed",
+        "thread": "77644-MainThread"
+    },
+    "fields": {},
+    "id": "142bb87e-d0c5-4c2e-bc4c-e45b3523e885",
+    "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_text(\"Nonexistent Text\")",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_fail_element_not_found[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_fail_element_not_found"
+}
+[Qase][22:10:27][info] See why this test failed: https://app.qase.io/run/TD/dashboard/115?source=logs&status=%5B2%5D&search=test_fail_element_not_found
+[Qase][22:10:27][debug] Result test_fail_element_not_found added
+[Qase][22:10:35][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-incorrect-text-chromium/video.webm",
+            "id": "fa015071-5de4-48fb-a54d-b5ebf3898b21",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-incorrect-text-chromium/trace.zip",
+            "id": "d6c53f68-d7ac-4efd-9fc8-411d342e1afa",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 8462,
+        "end_time": 1751560835.658048,
+        "stacktrace": "page = <Page url='https://playwright.dev/docs/intro'>\n\n    def test_fail_incorrect_text(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        page.get_by_role(\"link\", name=\"Get started\").click()\n        # Fail: text is not matching\n>       expect(page.get_by_role(\"heading\", name=\"Installation\")).to_have_text(\"Wrong Text\")\nE       AssertionError: Locator expected to have text 'Wrong Text'\nE       Actual value: Installation \nE       Call log:\nE         - LocatorAssertions.to_have_text with timeout 5000ms\nE         -   - waiting for get_by_role(\"heading\", name=\"Installation\")\nE         -     6 \u00d7 locator resolved to <h1>Installation</h1>\nE         -       - unexpected value \"Installation\"\n\ntests/test_example.py:34: AssertionError",
+        "start_time": 1751560827.1956182,
+        "status": "failed",
+        "thread": "77644-MainThread"
+    },
+    "fields": {},
+    "id": "a3566ae5-fa9b-40d0-bf91-7e1ae9c827e1",
+    "message": "AssertionError: Locator expected to have text 'Wrong Text'\nActual value: Installation \nCall log:\n  - LocatorAssertions.to_have_text with timeout 5000ms\n  -   - waiting for get_by_role(\"heading\", name=\"Installation\")\n  -     6 \u00d7 locator resolved to <h1>Installation</h1>\n  -       - unexpected value \"Installation\"",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_fail_incorrect_text[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_fail_incorrect_text"
+}
+[Qase][22:10:35][info] See why this test failed: https://app.qase.io/run/TD/dashboard/115?source=logs&status=%5B2%5D&search=test_fail_incorrect_text
+[Qase][22:10:35][debug] Result test_fail_incorrect_text added
+[Qase][22:10:42][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-timeout-chromium/video.webm",
+            "id": "1525fa6d-1ca6-4eef-b34d-0d0053c44ad4",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-timeout-chromium/trace.zip",
+            "id": "94b62d3b-044f-4790-b2be-d900f25e5553",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 6485,
+        "end_time": 1751560842.144855,
+        "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_timeout(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: wait for element that never appears (timeout)\n>       expect(page.get_by_text(\"This will never appear\")).to_be_visible(timeout=3000)\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 3000ms\nE         -   - waiting for get_by_text(\"This will never appear\")\n\ntests/test_example.py:40: AssertionError",
+        "start_time": 1751560835.659245,
+        "status": "failed",
+        "thread": "77644-MainThread"
+    },
+    "fields": {},
+    "id": "00367e2a-d78b-4cec-8234-a2c033dea237",
+    "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 3000ms\n  -   - waiting for get_by_text(\"This will never appear\")",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_fail_timeout[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_fail_timeout"
+}
+[Qase][22:10:42][info] See why this test failed: https://app.qase.io/run/TD/dashboard/115?source=logs&status=%5B2%5D&search=test_fail_timeout
+[Qase][22:10:42][debug] Result test_fail_timeout added
+[Qase][22:10:50][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-incorrect-attribute-chromium/video.webm",
+            "id": "e2d3b75c-8757-4763-a71c-9c6687be0493",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-incorrect-attribute-chromium/trace.zip",
+            "id": "ec5eb4e5-a7c7-44a1-b9b8-60525064c8c8",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 8277,
+        "end_time": 1751560850.422533,
+        "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_incorrect_attribute(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: assert attribute that is wrong\n        elem = page.get_by_role(\"link\", name=\"Get started\")\n>       expect(elem).to_have_attribute(\"href\", \"/wrong-link\")\nE       AssertionError: Locator expected to have attribute '/wrong-link'\nE       Actual value: /docs/intro \nE       Call log:\nE         - LocatorAssertions.to_have_attribute with timeout 5000ms\nE         -   - waiting for get_by_role(\"link\", name=\"Get started\")\nE         -     9 \u00d7 locator resolved to <a href=\"/docs/intro\" class=\"getStarted_Sjon\">Get started</a>\nE         -       - unexpected value \"/docs/intro\"\n\ntests/test_example.py:47: AssertionError",
+        "start_time": 1751560842.145409,
+        "status": "failed",
+        "thread": "77644-MainThread"
+    },
+    "fields": {},
+    "id": "0b9cfc33-3b8c-4161-b08a-e8b704fb3e7d",
+    "message": "AssertionError: Locator expected to have attribute '/wrong-link'\nActual value: /docs/intro \nCall log:\n  - LocatorAssertions.to_have_attribute with timeout 5000ms\n  -   - waiting for get_by_role(\"link\", name=\"Get started\")\n  -     9 \u00d7 locator resolved to <a href=\"/docs/intro\" class=\"getStarted_Sjon\">Get started</a>\n  -       - unexpected value \"/docs/intro\"",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_fail_incorrect_attribute[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_fail_incorrect_attribute"
+}
+[Qase][22:10:50][info] See why this test failed: https://app.qase.io/run/TD/dashboard/115?source=logs&status=%5B2%5D&search=test_fail_incorrect_attribute
+[Qase][22:10:50][debug] Result test_fail_incorrect_attribute added
+[Qase][22:10:50][debug] Uploading attachment fc9c4b0e-91d8-41be-9c48-b9a9e052b7be for project TD
+[Qase][22:10:51][debug] Uploading attachment ce3d241e-0ed5-4a9e-a812-b7aeb31aef2c for project TD
+[Qase][22:10:55][debug] Prepared result: {"title": "test_has_title", "signature": "tests::test_example.py::test_has_title[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751560796.8645608, "end_time": 1751560802.489015, "status": "passed", "duration": 5624, "thread": "77644-MainThread", "stacktrace": null}, "fields": {}, "attachments": ["d3101d430198e63519be0d02743673ebd85c2a71", "df2f70cfc5a080798a90ca495652fc3187b3da80"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "defect": false, "testops_ids": null, "message": null}
+[Qase][22:10:55][debug] Uploading attachment 81d5bd8b-130f-4cfd-a84f-eeefdcb95012 for project TD
+[Qase][22:10:56][debug] Uploading attachment 97e872f8-2404-47d5-a794-53a6599b114b for project TD
+[Qase][22:11:06][debug] Prepared result: {"title": "test_get_started_link", "signature": "tests::test_example.py::test_get_started_link[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751560802.489407, "end_time": 1751560810.640105, "status": "failed", "duration": 8150, "stacktrace": "page = <Page url='https://playwright.dev/docs/intro'>\n\n    def test_get_started_link(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: typo in heading name\n        page.get_by_role(\"link\", name=\"Get started\").click()\n>       expect(page.get_by_role(\"heading\", name=\"Instalation\")).to_be_visible()  # typo\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_role(\"heading\", name=\"Instalation\")\n\ntests/test_example.py:15: AssertionError", "thread": "77644-MainThread"}, "fields": {}, "attachments": ["3d3f0a5e2c2001580b18ebe663ae3589e6a89e0d", "9738ce7311b6595b8e230475942923f7bd25cb12"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_role(\"heading\", name=\"Instalation\")", "defect": false, "testops_ids": null}
+[Qase][22:11:06][debug] Uploading attachment 7a702991-e335-4256-998a-2721bcd52a3c for project TD
+[Qase][22:11:06][debug] Uploading attachment 253ed493-27f8-4e9c-a7f1-c15022356c38 for project TD
+[Qase][22:11:08][debug] Prepared result: {"title": "test_fail_wrong_url", "signature": "tests::test_example.py::test_fail_wrong_url[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751560810.640706, "end_time": 1751560819.069509, "status": "failed", "duration": 8428, "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_wrong_url(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: wrong URL assertion\n>       expect(page).to_have_url(\"https://example.com\")  # wrong URL\nE       AssertionError: Page URL expected to be 'https://example.com'\nE       Actual value: https://playwright.dev/ \nE       Call log:\nE         - PageAssertions.to_have_url with timeout 5000ms\nE         -   - waiting for locator(\":root\")\nE         -     9 \u00d7 locator resolved to <html lang=\"en\" dir=\"ltr\" data-theme=\"light\" data-has-hydrated=\"true\" data-theme-choice=\"system\" class=\"plugin-pages plugin-id-default\" data-rh=\"lang,dir,class,data-has-hydrated\">\u2026</html>\nE         -       - unexpected value \"https://playwright.dev/\"\n\ntests/test_example.py:21: AssertionError", "thread": "77644-MainThread"}, "fields": {}, "attachments": ["2f99e7c3e40cdccfb1d87193932533e60f32856f", "3aae9c720ffc3d69c750fc1b59cb68a0f0b996ba"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Page URL expected to be 'https://example.com'\nActual value: https://playwright.dev/ \nCall log:\n  - PageAssertions.to_have_url with timeout 5000ms\n  -   - waiting for locator(\":root\")\n  -     9 \u00d7 locator resolved to <html lang=\"en\" dir=\"ltr\" data-theme=\"light\" data-has-hydrated=\"true\" data-theme-choice=\"system\" class=\"plugin-pages plugin-id-default\" data-rh=\"lang,dir,class,data-has-hydrated\">\u2026</html>\n  -       - unexpected value \"https://playwright.dev/\"", "defect": false, "testops_ids": null}
+[Qase][22:11:08][debug] Uploading attachment cd8e657e-71a4-4487-add5-573bb0932ca8 for project TD
+[Qase][22:11:08][debug] Uploading attachment e75dcf35-8a21-46c0-8d27-f563afee66de for project TD
+[Qase][22:11:10][debug] Prepared result: {"title": "test_fail_element_not_found", "signature": "tests::test_example.py::test_fail_element_not_found[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751560819.070085, "end_time": 1751560827.195007, "status": "failed", "duration": 8124, "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_element_not_found(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: element that doesn't exist\n>       expect(page.get_by_text(\"Nonexistent Text\")).to_be_visible()\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_text(\"Nonexistent Text\")\n\ntests/test_example.py:27: AssertionError", "thread": "77644-MainThread"}, "fields": {}, "attachments": ["05d7f31fce47c3e43fffcd19a2de0f476f3e94a9", "9eab6baecf68d656a1e2de927d51dd6427204ac0"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_text(\"Nonexistent Text\")", "defect": false, "testops_ids": null}
+[Qase][22:11:10][debug] Uploading attachment fa015071-5de4-48fb-a54d-b5ebf3898b21 for project TD
+[Qase][22:11:10][debug] Uploading attachment d6c53f68-d7ac-4efd-9fc8-411d342e1afa for project TD
+[Qase][22:11:12][debug] Prepared result: {"title": "test_fail_incorrect_text", "signature": "tests::test_example.py::test_fail_incorrect_text[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751560827.1956182, "end_time": 1751560835.658048, "status": "failed", "duration": 8462, "stacktrace": "page = <Page url='https://playwright.dev/docs/intro'>\n\n    def test_fail_incorrect_text(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        page.get_by_role(\"link\", name=\"Get started\").click()\n        # Fail: text is not matching\n>       expect(page.get_by_role(\"heading\", name=\"Installation\")).to_have_text(\"Wrong Text\")\nE       AssertionError: Locator expected to have text 'Wrong Text'\nE       Actual value: Installation \nE       Call log:\nE         - LocatorAssertions.to_have_text with timeout 5000ms\nE         -   - waiting for get_by_role(\"heading\", name=\"Installation\")\nE         -     6 \u00d7 locator resolved to <h1>Installation</h1>\nE         -       - unexpected value \"Installation\"\n\ntests/test_example.py:34: AssertionError", "thread": "77644-MainThread"}, "fields": {}, "attachments": ["eaab2f4bb9a7f4b05a1a2ae8c3a175331510e783", "cf1380e6493ea489700a4ed364fdf66920b2f54d"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Locator expected to have text 'Wrong Text'\nActual value: Installation \nCall log:\n  - LocatorAssertions.to_have_text with timeout 5000ms\n  -   - waiting for get_by_role(\"heading\", name=\"Installation\")\n  -     6 \u00d7 locator resolved to <h1>Installation</h1>\n  -       - unexpected value \"Installation\"", "defect": false, "testops_ids": null}
+[Qase][22:11:12][debug] Uploading attachment 1525fa6d-1ca6-4eef-b34d-0d0053c44ad4 for project TD
+[Qase][22:11:12][debug] Uploading attachment 94b62d3b-044f-4790-b2be-d900f25e5553 for project TD
+[Qase][22:11:13][debug] Prepared result: {"title": "test_fail_timeout", "signature": "tests::test_example.py::test_fail_timeout[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751560835.659245, "end_time": 1751560842.144855, "status": "failed", "duration": 6485, "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_timeout(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: wait for element that never appears (timeout)\n>       expect(page.get_by_text(\"This will never appear\")).to_be_visible(timeout=3000)\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 3000ms\nE         -   - waiting for get_by_text(\"This will never appear\")\n\ntests/test_example.py:40: AssertionError", "thread": "77644-MainThread"}, "fields": {}, "attachments": ["c426339afac70c7fea5b1de90c7cac1f0187184e", "c3f6dab4e52f14214bc86977692cc69d17d447c2"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 3000ms\n  -   - waiting for get_by_text(\"This will never appear\")", "defect": false, "testops_ids": null}
+[Qase][22:11:13][debug] Uploading attachment e2d3b75c-8757-4763-a71c-9c6687be0493 for project TD
+[Qase][22:11:14][debug] Uploading attachment ec5eb4e5-a7c7-44a1-b9b8-60525064c8c8 for project TD
+[Qase][22:11:15][debug] Prepared result: {"title": "test_fail_incorrect_attribute", "signature": "tests::test_example.py::test_fail_incorrect_attribute[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751560842.145409, "end_time": 1751560850.422533, "status": "failed", "duration": 8277, "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_incorrect_attribute(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: assert attribute that is wrong\n        elem = page.get_by_role(\"link\", name=\"Get started\")\n>       expect(elem).to_have_attribute(\"href\", \"/wrong-link\")\nE       AssertionError: Locator expected to have attribute '/wrong-link'\nE       Actual value: /docs/intro \nE       Call log:\nE         - LocatorAssertions.to_have_attribute with timeout 5000ms\nE         -   - waiting for get_by_role(\"link\", name=\"Get started\")\nE         -     9 \u00d7 locator resolved to <a href=\"/docs/intro\" class=\"getStarted_Sjon\">Get started</a>\nE         -       - unexpected value \"/docs/intro\"\n\ntests/test_example.py:47: AssertionError", "thread": "77644-MainThread"}, "fields": {}, "attachments": ["c4d81b239564e745a6b8b7eecffba8935fbb7b09", "1ec6af191e48e33b437484d828ea609d6b92ae08"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Locator expected to have attribute '/wrong-link'\nActual value: /docs/intro \nCall log:\n  - LocatorAssertions.to_have_attribute with timeout 5000ms\n  -   - waiting for get_by_role(\"link\", name=\"Get started\")\n  -     9 \u00d7 locator resolved to <a href=\"/docs/intro\" class=\"getStarted_Sjon\">Get started</a>\n  -       - unexpected value \"/docs/intro\"", "defect": false, "testops_ids": null}
+[Qase][22:11:15][debug] Sending results for run 115: [ResultCreate(id=None, title='test_has_title', signature='tests::test_example.py::test_has_title[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751560796.8645608, end_time=1751560802.489015, status='passed', duration=5624, stacktrace=None, thread='77644-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['d3101d430198e63519be0d02743673ebd85c2a71', 'df2f70cfc5a080798a90ca495652fc3187b3da80'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message=None, defect=False), ResultCreate(id=None, title='test_get_started_link', signature='tests::test_example.py::test_get_started_link[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751560802.489407, end_time=1751560810.640105, status='failed', duration=8150, stacktrace='page = <Page url=\'https://playwright.dev/docs/intro\'>\n\n    def test_get_started_link(page: Page):\n        page.goto("https://playwright.dev/")\n        # Fail: typo in heading name\n        page.get_by_role("link", name="Get started").click()\n>       expect(page.get_by_role("heading", name="Instalation")).to_be_visible()  # typo\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_role("heading", name="Instalation")\n\ntests/test_example.py:15: AssertionError', thread='77644-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['3d3f0a5e2c2001580b18ebe663ae3589e6a89e0d', '9738ce7311b6595b8e230475942923f7bd25cb12'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_role("heading", name="Instalation")', defect=False), ResultCreate(id=None, title='test_fail_wrong_url', signature='tests::test_example.py::test_fail_wrong_url[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751560810.640706, end_time=1751560819.069509, status='failed', duration=8428, stacktrace='page = <Page url=\'https://playwright.dev/\'>\n\n    def test_fail_wrong_url(page: Page):\n        page.goto("https://playwright.dev/")\n        # Fail: wrong URL assertion\n>       expect(page).to_have_url("https://example.com")  # wrong URL\nE       AssertionError: Page URL expected to be \'https://example.com\'\nE       Actual value: https://playwright.dev/ \nE       Call log:\nE         - PageAssertions.to_have_url with timeout 5000ms\nE         -   - waiting for locator(":root")\nE         -     9 × locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-hydrated="true" data-theme-choice="system" class="plugin-pages plugin-id-default" data-rh="lang,dir,class,data-has-hydrated">…</html>\nE         -       - unexpected value "https://playwright.dev/"\n\ntests/test_example.py:21: AssertionError', thread='77644-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['2f99e7c3e40cdccfb1d87193932533e60f32856f', '3aae9c720ffc3d69c750fc1b59cb68a0f0b996ba'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Page URL expected to be \'https://example.com\'\nActual value: https://playwright.dev/ \nCall log:\n  - PageAssertions.to_have_url with timeout 5000ms\n  -   - waiting for locator(":root")\n  -     9 × locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-hydrated="true" data-theme-choice="system" class="plugin-pages plugin-id-default" data-rh="lang,dir,class,data-has-hydrated">…</html>\n  -       - unexpected value "https://playwright.dev/"', defect=False), ResultCreate(id=None, title='test_fail_element_not_found', signature='tests::test_example.py::test_fail_element_not_found[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751560819.070085, end_time=1751560827.195007, status='failed', duration=8124, stacktrace='page = <Page url=\'https://playwright.dev/\'>\n\n    def test_fail_element_not_found(page: Page):\n        page.goto("https://playwright.dev/")\n        # Fail: element that doesn\'t exist\n>       expect(page.get_by_text("Nonexistent Text")).to_be_visible()\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_text("Nonexistent Text")\n\ntests/test_example.py:27: AssertionError', thread='77644-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['05d7f31fce47c3e43fffcd19a2de0f476f3e94a9', '9eab6baecf68d656a1e2de927d51dd6427204ac0'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_text("Nonexistent Text")', defect=False), ResultCreate(id=None, title='test_fail_incorrect_text', signature='tests::test_example.py::test_fail_incorrect_text[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751560827.1956182, end_time=1751560835.658048, status='failed', duration=8462, stacktrace='page = <Page url=\'https://playwright.dev/docs/intro\'>\n\n    def test_fail_incorrect_text(page: Page):\n        page.goto("https://playwright.dev/")\n        page.get_by_role("link", name="Get started").click()\n        # Fail: text is not matching\n>       expect(page.get_by_role("heading", name="Installation")).to_have_text("Wrong Text")\nE       AssertionError: Locator expected to have text \'Wrong Text\'\nE       Actual value: Installation \nE       Call log:\nE         - LocatorAssertions.to_have_text with timeout 5000ms\nE         -   - waiting for get_by_role("heading", name="Installation")\nE         -     6 × locator resolved to <h1>Installation</h1>\nE         -       - unexpected value "Installation"\n\ntests/test_example.py:34: AssertionError', thread='77644-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['eaab2f4bb9a7f4b05a1a2ae8c3a175331510e783', 'cf1380e6493ea489700a4ed364fdf66920b2f54d'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Locator expected to have text \'Wrong Text\'\nActual value: Installation \nCall log:\n  - LocatorAssertions.to_have_text with timeout 5000ms\n  -   - waiting for get_by_role("heading", name="Installation")\n  -     6 × locator resolved to <h1>Installation</h1>\n  -       - unexpected value "Installation"', defect=False), ResultCreate(id=None, title='test_fail_timeout', signature='tests::test_example.py::test_fail_timeout[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751560835.659245, end_time=1751560842.144855, status='failed', duration=6485, stacktrace='page = <Page url=\'https://playwright.dev/\'>\n\n    def test_fail_timeout(page: Page):\n        page.goto("https://playwright.dev/")\n        # Fail: wait for element that never appears (timeout)\n>       expect(page.get_by_text("This will never appear")).to_be_visible(timeout=3000)\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 3000ms\nE         -   - waiting for get_by_text("This will never appear")\n\ntests/test_example.py:40: AssertionError', thread='77644-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['c426339afac70c7fea5b1de90c7cac1f0187184e', 'c3f6dab4e52f14214bc86977692cc69d17d447c2'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 3000ms\n  -   - waiting for get_by_text("This will never appear")', defect=False), ResultCreate(id=None, title='test_fail_incorrect_attribute', signature='tests::test_example.py::test_fail_incorrect_attribute[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751560842.145409, end_time=1751560850.422533, status='failed', duration=8277, stacktrace='page = <Page url=\'https://playwright.dev/\'>\n\n    def test_fail_incorrect_attribute(page: Page):\n        page.goto("https://playwright.dev/")\n        # Fail: assert attribute that is wrong\n        elem = page.get_by_role("link", name="Get started")\n>       expect(elem).to_have_attribute("href", "/wrong-link")\nE       AssertionError: Locator expected to have attribute \'/wrong-link\'\nE       Actual value: /docs/intro \nE       Call log:\nE         - LocatorAssertions.to_have_attribute with timeout 5000ms\nE         -   - waiting for get_by_role("link", name="Get started")\nE         -     9 × locator resolved to <a href="/docs/intro" class="getStarted_Sjon">Get started</a>\nE         -       - unexpected value "/docs/intro"\n\ntests/test_example.py:47: AssertionError', thread='77644-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['c4d81b239564e745a6b8b7eecffba8935fbb7b09', '1ec6af191e48e33b437484d828ea609d6b92ae08'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Locator expected to have attribute \'/wrong-link\'\nActual value: /docs/intro \nCall log:\n  - LocatorAssertions.to_have_attribute with timeout 5000ms\n  -   - waiting for get_by_role("link", name="Get started")\n  -     9 × locator resolved to <a href="/docs/intro" class="getStarted_Sjon">Get started</a>\n  -       - unexpected value "/docs/intro"', defect=False)]
+[Qase][22:11:16][debug] Results for run 115 sent successfully
+[Qase][22:11:16][debug] Completing run
+[Qase][22:11:16][debug] Completing run 115
+[Qase][22:11:16][debug] Run 115 already completed
+[Qase][22:11:16][debug] Run completed
+[Qase][22:11:16][info] Overhead for Qase Report: 26688ms
+[Qase][22:12:51][debug] Config: {
+    "debug": true,
+    "environment": "local",
+    "exclude_params": [],
+    "execution_plan": {
+        "path": "./build/qase-execution-plan.json"
+    },
+    "fallback": "report",
+    "framework": {
+        "playwright": {
+            "output_dir": "test-results",
+            "trace": "on",
+            "video": "on"
+        },
+        "pytest": {
+            "capture_logs": true,
+            "xfail_status": {
+                "xfail": "skipped",
+                "xpass": "passed"
+            }
+        }
+    },
+    "mode": "testops",
+    "profilers": [
+        "network",
+        "sleep"
+    ],
+    "report": {
+        "connection": {
+            "format": "json",
+            "path": "./build/qase-report"
+        },
+        "driver": "local"
+    },
+    "testops": {
+        "api": {
+            "host": "qase.io",
+            "token": "7b2c180e4c96555e7e77d2f18e51cef2c4a0ad40ff94ef60f212c72826973cdd"
+        },
+        "batch": {
+            "size": 100
+        },
+        "defect": false,
+        "plan": {},
+        "project": "TD",
+        "run": {
+            "complete": true,
+            "tags": [],
+            "title": "pytestrun"
+        }
+    }
+}
+[Qase][22:12:52][debug] Host data: {'system': 'darwin', 'machineName': 'Ankitas-MacBook-Air.local', 'release': '24.5.0', 'version': '15.5', 'arch': 'arm64', 'python': '3.13.3', 'pip': '24.3.1', 'framework': '8.3.4', 'reporter': '6.3.3', 'commons': '3.5.0', 'apiClientV1': '1.2.1', 'apiClientV2': '1.2.1'}
+[Qase][22:12:52][debug] Preparing API client
+[Qase][22:12:52][debug] API client prepared
+[Qase][22:12:52][debug] Preparing API V2 client
+[Qase][22:12:52][debug] API V2 client prepared
+[Qase][22:12:52][debug] Getting environment local
+[Qase][22:12:53][debug] Environment local not found
+[Qase][22:12:53][debug] Getting project TD
+[Qase][22:12:54][debug] Project TD found: {"title": "test-demo", "code": "TD", "counts": {"cases": 123, "suites": 69, "milestones": 0, "runs": {"total": 157, "active": 65}, "defects": {"total": 3, "open": 3}}}
+[Qase][22:12:54][debug] Starting run
+[Qase][22:12:54][debug] Creating test run with parameters: {'title': 'pytestrun', 'description': 'Automated Run 2025-07-03 22:12:53.826639', 'environment_id': None, 'plan_id': None, 'is_autotest': True, 'start_time': '2025-07-03 16:42:54', 'tags': []}
+[Qase][22:12:55][debug] Run ID: 161
+[Qase][22:12:59][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-has-title-chromium/video.webm",
+            "id": "b071515a-d5a3-44b3-b15c-496a6a0f5f54",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-has-title-chromium/trace.zip",
+            "id": "118711b4-c3a6-4594-99b6-2bf162e2e7db",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 3467,
+        "end_time": 1751560979.10847,
+        "stacktrace": null,
+        "start_time": 1751560975.6406348,
+        "status": "passed",
+        "thread": "77848-MainThread"
+    },
+    "fields": {},
+    "id": "2b46cbd7-0160-40c8-b53e-736329d66c7b",
+    "message": null,
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_has_title[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_has_title"
+}
+[Qase][22:12:59][debug] Result test_has_title added
+[Qase][22:13:07][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-get-started-link-chromium/video.webm",
+            "id": "5e958bbd-9848-482d-a3ee-83ed7198e518",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-get-started-link-chromium/trace.zip",
+            "id": "d8091c01-c92d-440d-8d67-8581b35b285e",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 8403,
+        "end_time": 1751560987.5124211,
+        "stacktrace": "page = <Page url='https://playwright.dev/docs/intro'>\n\n    def test_get_started_link(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: typo in heading name\n        page.get_by_role(\"link\", name=\"Get started\").click()\n>       expect(page.get_by_role(\"heading\", name=\"Instalation\")).to_be_visible()  # typo\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_role(\"heading\", name=\"Instalation\")\n\ntests/test_example.py:15: AssertionError",
+        "start_time": 1751560979.108905,
+        "status": "failed",
+        "thread": "77848-MainThread"
+    },
+    "fields": {},
+    "id": "c227619d-390a-498b-a1f9-8dd07c178ff5",
+    "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_role(\"heading\", name=\"Instalation\")",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_get_started_link[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_get_started_link"
+}
+[Qase][22:13:07][info] See why this test failed: https://app.qase.io/run/TD/dashboard/161?source=logs&status=%5B2%5D&search=test_get_started_link
+[Qase][22:13:07][debug] Result test_get_started_link added
+[Qase][22:13:15][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-wrong-url-chromium/video.webm",
+            "id": "cc857b41-a97e-43d0-9c28-ee3e0106843d",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-wrong-url-chromium/trace.zip",
+            "id": "5b902e3d-f224-40aa-ae31-2274f0201d8c",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 8013,
+        "end_time": 1751560995.526628,
+        "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_wrong_url(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: wrong URL assertion\n>       expect(page).to_have_url(\"https://example.com\")  # wrong URL\nE       AssertionError: Page URL expected to be 'https://example.com'\nE       Actual value: https://playwright.dev/ \nE       Call log:\nE         - PageAssertions.to_have_url with timeout 5000ms\nE         -   - waiting for locator(\":root\")\nE         -     9 \u00d7 locator resolved to <html lang=\"en\" dir=\"ltr\" data-theme=\"light\" data-has-hydrated=\"true\" data-theme-choice=\"system\" class=\"plugin-pages plugin-id-default\" data-rh=\"lang,dir,class,data-has-hydrated\">\u2026</html>\nE         -       - unexpected value \"https://playwright.dev/\"\n\ntests/test_example.py:21: AssertionError",
+        "start_time": 1751560987.513142,
+        "status": "failed",
+        "thread": "77848-MainThread"
+    },
+    "fields": {},
+    "id": "510d9c48-9488-4754-a749-32ada964bc2e",
+    "message": "AssertionError: Page URL expected to be 'https://example.com'\nActual value: https://playwright.dev/ \nCall log:\n  - PageAssertions.to_have_url with timeout 5000ms\n  -   - waiting for locator(\":root\")\n  -     9 \u00d7 locator resolved to <html lang=\"en\" dir=\"ltr\" data-theme=\"light\" data-has-hydrated=\"true\" data-theme-choice=\"system\" class=\"plugin-pages plugin-id-default\" data-rh=\"lang,dir,class,data-has-hydrated\">\u2026</html>\n  -       - unexpected value \"https://playwright.dev/\"",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_fail_wrong_url[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_fail_wrong_url"
+}
+[Qase][22:13:15][info] See why this test failed: https://app.qase.io/run/TD/dashboard/161?source=logs&status=%5B2%5D&search=test_fail_wrong_url
+[Qase][22:13:15][debug] Result test_fail_wrong_url added
+[Qase][22:13:23][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-element-not-found-chromium/video.webm",
+            "id": "0423c375-ee56-4048-a3df-ea4974b4560f",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-element-not-found-chromium/trace.zip",
+            "id": "1f7305d9-95ff-46d9-ac02-8b663b138146",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 8263,
+        "end_time": 1751561003.790535,
+        "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_element_not_found(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: element that doesn't exist\n>       expect(page.get_by_text(\"Nonexistent Text\")).to_be_visible()\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_text(\"Nonexistent Text\")\n\ntests/test_example.py:27: AssertionError",
+        "start_time": 1751560995.527297,
+        "status": "failed",
+        "thread": "77848-MainThread"
+    },
+    "fields": {},
+    "id": "ae757330-1a08-4fc3-9833-4ce30a86067f",
+    "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_text(\"Nonexistent Text\")",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_fail_element_not_found[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_fail_element_not_found"
+}
+[Qase][22:13:23][info] See why this test failed: https://app.qase.io/run/TD/dashboard/161?source=logs&status=%5B2%5D&search=test_fail_element_not_found
+[Qase][22:13:23][debug] Result test_fail_element_not_found added
+[Qase][22:13:31][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-incorrect-text-chromium/video.webm",
+            "id": "62ae5936-0adb-4ab7-8de3-7711d175e1e3",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-incorrect-text-chromium/trace.zip",
+            "id": "eb2681c2-9dfe-48f6-bff9-ea96380c6230",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 8201,
+        "end_time": 1751561011.99306,
+        "stacktrace": "page = <Page url='https://playwright.dev/docs/intro'>\n\n    def test_fail_incorrect_text(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        page.get_by_role(\"link\", name=\"Get started\").click()\n        # Fail: text is not matching\n>       expect(page.get_by_role(\"heading\", name=\"Installation\")).to_have_text(\"Wrong Text\")\nE       AssertionError: Locator expected to have text 'Wrong Text'\nE       Actual value: Installation \nE       Call log:\nE         - LocatorAssertions.to_have_text with timeout 5000ms\nE         -   - waiting for get_by_role(\"heading\", name=\"Installation\")\nE         -     5 \u00d7 locator resolved to <h1>Installation</h1>\nE         -       - unexpected value \"Installation\"\n\ntests/test_example.py:34: AssertionError",
+        "start_time": 1751561003.791471,
+        "status": "failed",
+        "thread": "77848-MainThread"
+    },
+    "fields": {},
+    "id": "0ce0a16c-54ac-4b53-b7e4-a9bd7afc4d8c",
+    "message": "AssertionError: Locator expected to have text 'Wrong Text'\nActual value: Installation \nCall log:\n  - LocatorAssertions.to_have_text with timeout 5000ms\n  -   - waiting for get_by_role(\"heading\", name=\"Installation\")\n  -     5 \u00d7 locator resolved to <h1>Installation</h1>\n  -       - unexpected value \"Installation\"",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_fail_incorrect_text[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_fail_incorrect_text"
+}
+[Qase][22:13:31][info] See why this test failed: https://app.qase.io/run/TD/dashboard/161?source=logs&status=%5B2%5D&search=test_fail_incorrect_text
+[Qase][22:13:31][debug] Result test_fail_incorrect_text added
+[Qase][22:13:38][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-timeout-chromium/video.webm",
+            "id": "9aadb8f4-beff-4939-aa82-41de53dec53a",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-timeout-chromium/trace.zip",
+            "id": "c3542e7b-9291-4e0b-815c-193506d9e8d2",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 6100,
+        "end_time": 1751561018.094322,
+        "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_timeout(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: wait for element that never appears (timeout)\n>       expect(page.get_by_text(\"This will never appear\")).to_be_visible(timeout=3000)\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 3000ms\nE         -   - waiting for get_by_text(\"This will never appear\")\n\ntests/test_example.py:40: AssertionError",
+        "start_time": 1751561011.993919,
+        "status": "failed",
+        "thread": "77848-MainThread"
+    },
+    "fields": {},
+    "id": "95c8a3f7-605e-4f0e-89af-5fd30b017d16",
+    "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 3000ms\n  -   - waiting for get_by_text(\"This will never appear\")",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_fail_timeout[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_fail_timeout"
+}
+[Qase][22:13:38][info] See why this test failed: https://app.qase.io/run/TD/dashboard/161?source=logs&status=%5B2%5D&search=test_fail_timeout
+[Qase][22:13:38][debug] Result test_fail_timeout added
+[Qase][22:13:46][debug] Adding result {
+    "attachments": [
+        {
+            "content": "null",
+            "file_name": "video.webm",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-incorrect-attribute-chromium/video.webm",
+            "id": "5dd9657f-cfa6-4a3b-81e7-e7f576ced94c",
+            "mime_type": "video/webm",
+            "temporary": false
+        },
+        {
+            "content": "null",
+            "file_name": "trace.zip",
+            "file_path": "/Users/ankitadasgupta/qase/playwright-pytest-qase/test-results/tests-test-example-py-test-fail-incorrect-attribute-chromium/trace.zip",
+            "id": "5972508b-815e-4cb2-9b26-0b0284d2f4c1",
+            "mime_type": "application/zip",
+            "temporary": false
+        }
+    ],
+    "execution": {
+        "duration": 8418,
+        "end_time": 1751561026.513804,
+        "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_incorrect_attribute(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: assert attribute that is wrong\n        elem = page.get_by_role(\"link\", name=\"Get started\")\n>       expect(elem).to_have_attribute(\"href\", \"/wrong-link\")\nE       AssertionError: Locator expected to have attribute '/wrong-link'\nE       Actual value: /docs/intro \nE       Call log:\nE         - LocatorAssertions.to_have_attribute with timeout 5000ms\nE         -   - waiting for get_by_role(\"link\", name=\"Get started\")\nE         -     9 \u00d7 locator resolved to <a href=\"/docs/intro\" class=\"getStarted_Sjon\">Get started</a>\nE         -       - unexpected value \"/docs/intro\"\n\ntests/test_example.py:47: AssertionError",
+        "start_time": 1751561018.0949051,
+        "status": "failed",
+        "thread": "77848-MainThread"
+    },
+    "fields": {},
+    "id": "13cc3605-3cbc-4827-b8ad-ee165000e362",
+    "message": "AssertionError: Locator expected to have attribute '/wrong-link'\nActual value: /docs/intro \nCall log:\n  - LocatorAssertions.to_have_attribute with timeout 5000ms\n  -   - waiting for get_by_role(\"link\", name=\"Get started\")\n  -     9 \u00d7 locator resolved to <a href=\"/docs/intro\" class=\"getStarted_Sjon\">Get started</a>\n  -       - unexpected value \"/docs/intro\"",
+    "muted": false,
+    "param_groups": [],
+    "params": {
+        "browser_name": "chromium"
+    },
+    "relations": {
+        "suite": {
+            "data": [
+                {
+                    "public_id": null,
+                    "title": "tests"
+                },
+                {
+                    "public_id": null,
+                    "title": "test_example"
+                }
+            ]
+        }
+    },
+    "signature": "tests::test_example.py::test_fail_incorrect_attribute[chromium]::{browser_name:chromium}",
+    "steps": [],
+    "testops_ids": null,
+    "title": "test_fail_incorrect_attribute"
+}
+[Qase][22:13:46][info] See why this test failed: https://app.qase.io/run/TD/dashboard/161?source=logs&status=%5B2%5D&search=test_fail_incorrect_attribute
+[Qase][22:13:46][debug] Result test_fail_incorrect_attribute added
+[Qase][22:13:46][debug] Uploading attachment b071515a-d5a3-44b3-b15c-496a6a0f5f54 for project TD
+[Qase][22:13:48][debug] Uploading attachment 118711b4-c3a6-4594-99b6-2bf162e2e7db for project TD
+[Qase][22:13:49][debug] Prepared result: {"title": "test_has_title", "signature": "tests::test_example.py::test_has_title[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751560975.6406348, "end_time": 1751560979.10847, "status": "passed", "duration": 3467, "thread": "77848-MainThread", "stacktrace": null}, "fields": {}, "attachments": ["393bc80f7fd97d634e2ebf210caf8f7284f216ca", "17db60535a573f6ff2118bdad96813176fe18f04"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "defect": false, "testops_ids": null, "message": null}
+[Qase][22:13:49][debug] Uploading attachment 5e958bbd-9848-482d-a3ee-83ed7198e518 for project TD
+[Qase][22:13:50][debug] Uploading attachment d8091c01-c92d-440d-8d67-8581b35b285e for project TD
+[Qase][22:13:51][debug] Prepared result: {"title": "test_get_started_link", "signature": "tests::test_example.py::test_get_started_link[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751560979.108905, "end_time": 1751560987.5124211, "status": "failed", "duration": 8403, "stacktrace": "page = <Page url='https://playwright.dev/docs/intro'>\n\n    def test_get_started_link(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: typo in heading name\n        page.get_by_role(\"link\", name=\"Get started\").click()\n>       expect(page.get_by_role(\"heading\", name=\"Instalation\")).to_be_visible()  # typo\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_role(\"heading\", name=\"Instalation\")\n\ntests/test_example.py:15: AssertionError", "thread": "77848-MainThread"}, "fields": {}, "attachments": ["ddb86907fb4dcbe3ba3c6a71976351fe0eb676fd", "b69b2cc539173c13203d9f260d914d7d5308612b"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_role(\"heading\", name=\"Instalation\")", "defect": false, "testops_ids": null}
+[Qase][22:13:51][debug] Uploading attachment cc857b41-a97e-43d0-9c28-ee3e0106843d for project TD
+[Qase][22:13:52][debug] Uploading attachment 5b902e3d-f224-40aa-ae31-2274f0201d8c for project TD
+[Qase][22:13:53][debug] Prepared result: {"title": "test_fail_wrong_url", "signature": "tests::test_example.py::test_fail_wrong_url[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751560987.513142, "end_time": 1751560995.526628, "status": "failed", "duration": 8013, "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_wrong_url(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: wrong URL assertion\n>       expect(page).to_have_url(\"https://example.com\")  # wrong URL\nE       AssertionError: Page URL expected to be 'https://example.com'\nE       Actual value: https://playwright.dev/ \nE       Call log:\nE         - PageAssertions.to_have_url with timeout 5000ms\nE         -   - waiting for locator(\":root\")\nE         -     9 \u00d7 locator resolved to <html lang=\"en\" dir=\"ltr\" data-theme=\"light\" data-has-hydrated=\"true\" data-theme-choice=\"system\" class=\"plugin-pages plugin-id-default\" data-rh=\"lang,dir,class,data-has-hydrated\">\u2026</html>\nE         -       - unexpected value \"https://playwright.dev/\"\n\ntests/test_example.py:21: AssertionError", "thread": "77848-MainThread"}, "fields": {}, "attachments": ["14ce8ceca15ee843f02ea1ce2c73de09d0fbe748", "e62b1dc02ceaa7bf9c84cf20a51f630ecc920606"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Page URL expected to be 'https://example.com'\nActual value: https://playwright.dev/ \nCall log:\n  - PageAssertions.to_have_url with timeout 5000ms\n  -   - waiting for locator(\":root\")\n  -     9 \u00d7 locator resolved to <html lang=\"en\" dir=\"ltr\" data-theme=\"light\" data-has-hydrated=\"true\" data-theme-choice=\"system\" class=\"plugin-pages plugin-id-default\" data-rh=\"lang,dir,class,data-has-hydrated\">\u2026</html>\n  -       - unexpected value \"https://playwright.dev/\"", "defect": false, "testops_ids": null}
+[Qase][22:13:53][debug] Uploading attachment 0423c375-ee56-4048-a3df-ea4974b4560f for project TD
+[Qase][22:13:53][debug] Uploading attachment 1f7305d9-95ff-46d9-ac02-8b663b138146 for project TD
+[Qase][22:13:54][debug] Prepared result: {"title": "test_fail_element_not_found", "signature": "tests::test_example.py::test_fail_element_not_found[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751560995.527297, "end_time": 1751561003.790535, "status": "failed", "duration": 8263, "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_element_not_found(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: element that doesn't exist\n>       expect(page.get_by_text(\"Nonexistent Text\")).to_be_visible()\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_text(\"Nonexistent Text\")\n\ntests/test_example.py:27: AssertionError", "thread": "77848-MainThread"}, "fields": {}, "attachments": ["679ff1a158a0b67c42e915b59cf04ff298892827", "7681640cb3111eb44d8a8f9dac8d71bd82d64194"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_text(\"Nonexistent Text\")", "defect": false, "testops_ids": null}
+[Qase][22:13:54][debug] Uploading attachment 62ae5936-0adb-4ab7-8de3-7711d175e1e3 for project TD
+[Qase][22:13:55][debug] Uploading attachment eb2681c2-9dfe-48f6-bff9-ea96380c6230 for project TD
+[Qase][22:13:56][debug] Prepared result: {"title": "test_fail_incorrect_text", "signature": "tests::test_example.py::test_fail_incorrect_text[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751561003.791471, "end_time": 1751561011.99306, "status": "failed", "duration": 8201, "stacktrace": "page = <Page url='https://playwright.dev/docs/intro'>\n\n    def test_fail_incorrect_text(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        page.get_by_role(\"link\", name=\"Get started\").click()\n        # Fail: text is not matching\n>       expect(page.get_by_role(\"heading\", name=\"Installation\")).to_have_text(\"Wrong Text\")\nE       AssertionError: Locator expected to have text 'Wrong Text'\nE       Actual value: Installation \nE       Call log:\nE         - LocatorAssertions.to_have_text with timeout 5000ms\nE         -   - waiting for get_by_role(\"heading\", name=\"Installation\")\nE         -     5 \u00d7 locator resolved to <h1>Installation</h1>\nE         -       - unexpected value \"Installation\"\n\ntests/test_example.py:34: AssertionError", "thread": "77848-MainThread"}, "fields": {}, "attachments": ["0d012f987ef1b14eb622b83828a8fa32940148d1", "351603705d752ab246822c86dbe3a940ae8c4409"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Locator expected to have text 'Wrong Text'\nActual value: Installation \nCall log:\n  - LocatorAssertions.to_have_text with timeout 5000ms\n  -   - waiting for get_by_role(\"heading\", name=\"Installation\")\n  -     5 \u00d7 locator resolved to <h1>Installation</h1>\n  -       - unexpected value \"Installation\"", "defect": false, "testops_ids": null}
+[Qase][22:13:56][debug] Uploading attachment 9aadb8f4-beff-4939-aa82-41de53dec53a for project TD
+[Qase][22:13:58][debug] Uploading attachment c3542e7b-9291-4e0b-815c-193506d9e8d2 for project TD
+[Qase][22:14:00][debug] Prepared result: {"title": "test_fail_timeout", "signature": "tests::test_example.py::test_fail_timeout[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751561011.993919, "end_time": 1751561018.094322, "status": "failed", "duration": 6100, "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_timeout(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: wait for element that never appears (timeout)\n>       expect(page.get_by_text(\"This will never appear\")).to_be_visible(timeout=3000)\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 3000ms\nE         -   - waiting for get_by_text(\"This will never appear\")\n\ntests/test_example.py:40: AssertionError", "thread": "77848-MainThread"}, "fields": {}, "attachments": ["f9eb4d702042d26b1dce817f293f487b2df52f0c", "27a256f3c807318e5ab2f34fa25062541a7baee0"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 3000ms\n  -   - waiting for get_by_text(\"This will never appear\")", "defect": false, "testops_ids": null}
+[Qase][22:14:00][debug] Uploading attachment 5dd9657f-cfa6-4a3b-81e7-e7f576ced94c for project TD
+[Qase][22:14:00][debug] Uploading attachment 5972508b-815e-4cb2-9b26-0b0284d2f4c1 for project TD
+[Qase][22:14:01][debug] Prepared result: {"title": "test_fail_incorrect_attribute", "signature": "tests::test_example.py::test_fail_incorrect_attribute[chromium]::{browser_name:chromium}", "execution": {"start_time": 1751561018.0949051, "end_time": 1751561026.513804, "status": "failed", "duration": 8418, "stacktrace": "page = <Page url='https://playwright.dev/'>\n\n    def test_fail_incorrect_attribute(page: Page):\n        page.goto(\"https://playwright.dev/\")\n        # Fail: assert attribute that is wrong\n        elem = page.get_by_role(\"link\", name=\"Get started\")\n>       expect(elem).to_have_attribute(\"href\", \"/wrong-link\")\nE       AssertionError: Locator expected to have attribute '/wrong-link'\nE       Actual value: /docs/intro \nE       Call log:\nE         - LocatorAssertions.to_have_attribute with timeout 5000ms\nE         -   - waiting for get_by_role(\"link\", name=\"Get started\")\nE         -     9 \u00d7 locator resolved to <a href=\"/docs/intro\" class=\"getStarted_Sjon\">Get started</a>\nE         -       - unexpected value \"/docs/intro\"\n\ntests/test_example.py:47: AssertionError", "thread": "77848-MainThread"}, "fields": {}, "attachments": ["1815de5eab21032fd11b91f46946967fff8ad707", "6b37bdf468ae93da305b11784cec576335832890"], "steps": [], "steps_type": "classic", "params": {"browser_name": "chromium"}, "param_groups": [], "relations": {"suite": {"data": [{"title": "tests"}, {"title": "test_example"}]}}, "message": "AssertionError: Locator expected to have attribute '/wrong-link'\nActual value: /docs/intro \nCall log:\n  - LocatorAssertions.to_have_attribute with timeout 5000ms\n  -   - waiting for get_by_role(\"link\", name=\"Get started\")\n  -     9 \u00d7 locator resolved to <a href=\"/docs/intro\" class=\"getStarted_Sjon\">Get started</a>\n  -       - unexpected value \"/docs/intro\"", "defect": false, "testops_ids": null}
+[Qase][22:14:01][debug] Sending results for run 161: [ResultCreate(id=None, title='test_has_title', signature='tests::test_example.py::test_has_title[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751560975.6406348, end_time=1751560979.10847, status='passed', duration=3467, stacktrace=None, thread='77848-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['393bc80f7fd97d634e2ebf210caf8f7284f216ca', '17db60535a573f6ff2118bdad96813176fe18f04'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message=None, defect=False), ResultCreate(id=None, title='test_get_started_link', signature='tests::test_example.py::test_get_started_link[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751560979.108905, end_time=1751560987.5124211, status='failed', duration=8403, stacktrace='page = <Page url=\'https://playwright.dev/docs/intro\'>\n\n    def test_get_started_link(page: Page):\n        page.goto("https://playwright.dev/")\n        # Fail: typo in heading name\n        page.get_by_role("link", name="Get started").click()\n>       expect(page.get_by_role("heading", name="Instalation")).to_be_visible()  # typo\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_role("heading", name="Instalation")\n\ntests/test_example.py:15: AssertionError', thread='77848-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['ddb86907fb4dcbe3ba3c6a71976351fe0eb676fd', 'b69b2cc539173c13203d9f260d914d7d5308612b'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_role("heading", name="Instalation")', defect=False), ResultCreate(id=None, title='test_fail_wrong_url', signature='tests::test_example.py::test_fail_wrong_url[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751560987.513142, end_time=1751560995.526628, status='failed', duration=8013, stacktrace='page = <Page url=\'https://playwright.dev/\'>\n\n    def test_fail_wrong_url(page: Page):\n        page.goto("https://playwright.dev/")\n        # Fail: wrong URL assertion\n>       expect(page).to_have_url("https://example.com")  # wrong URL\nE       AssertionError: Page URL expected to be \'https://example.com\'\nE       Actual value: https://playwright.dev/ \nE       Call log:\nE         - PageAssertions.to_have_url with timeout 5000ms\nE         -   - waiting for locator(":root")\nE         -     9 × locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-hydrated="true" data-theme-choice="system" class="plugin-pages plugin-id-default" data-rh="lang,dir,class,data-has-hydrated">…</html>\nE         -       - unexpected value "https://playwright.dev/"\n\ntests/test_example.py:21: AssertionError', thread='77848-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['14ce8ceca15ee843f02ea1ce2c73de09d0fbe748', 'e62b1dc02ceaa7bf9c84cf20a51f630ecc920606'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Page URL expected to be \'https://example.com\'\nActual value: https://playwright.dev/ \nCall log:\n  - PageAssertions.to_have_url with timeout 5000ms\n  -   - waiting for locator(":root")\n  -     9 × locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-hydrated="true" data-theme-choice="system" class="plugin-pages plugin-id-default" data-rh="lang,dir,class,data-has-hydrated">…</html>\n  -       - unexpected value "https://playwright.dev/"', defect=False), ResultCreate(id=None, title='test_fail_element_not_found', signature='tests::test_example.py::test_fail_element_not_found[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751560995.527297, end_time=1751561003.790535, status='failed', duration=8263, stacktrace='page = <Page url=\'https://playwright.dev/\'>\n\n    def test_fail_element_not_found(page: Page):\n        page.goto("https://playwright.dev/")\n        # Fail: element that doesn\'t exist\n>       expect(page.get_by_text("Nonexistent Text")).to_be_visible()\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 5000ms\nE         -   - waiting for get_by_text("Nonexistent Text")\n\ntests/test_example.py:27: AssertionError', thread='77848-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['679ff1a158a0b67c42e915b59cf04ff298892827', '7681640cb3111eb44d8a8f9dac8d71bd82d64194'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 5000ms\n  -   - waiting for get_by_text("Nonexistent Text")', defect=False), ResultCreate(id=None, title='test_fail_incorrect_text', signature='tests::test_example.py::test_fail_incorrect_text[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751561003.791471, end_time=1751561011.99306, status='failed', duration=8201, stacktrace='page = <Page url=\'https://playwright.dev/docs/intro\'>\n\n    def test_fail_incorrect_text(page: Page):\n        page.goto("https://playwright.dev/")\n        page.get_by_role("link", name="Get started").click()\n        # Fail: text is not matching\n>       expect(page.get_by_role("heading", name="Installation")).to_have_text("Wrong Text")\nE       AssertionError: Locator expected to have text \'Wrong Text\'\nE       Actual value: Installation \nE       Call log:\nE         - LocatorAssertions.to_have_text with timeout 5000ms\nE         -   - waiting for get_by_role("heading", name="Installation")\nE         -     5 × locator resolved to <h1>Installation</h1>\nE         -       - unexpected value "Installation"\n\ntests/test_example.py:34: AssertionError', thread='77848-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['0d012f987ef1b14eb622b83828a8fa32940148d1', '351603705d752ab246822c86dbe3a940ae8c4409'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Locator expected to have text \'Wrong Text\'\nActual value: Installation \nCall log:\n  - LocatorAssertions.to_have_text with timeout 5000ms\n  -   - waiting for get_by_role("heading", name="Installation")\n  -     5 × locator resolved to <h1>Installation</h1>\n  -       - unexpected value "Installation"', defect=False), ResultCreate(id=None, title='test_fail_timeout', signature='tests::test_example.py::test_fail_timeout[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751561011.993919, end_time=1751561018.094322, status='failed', duration=6100, stacktrace='page = <Page url=\'https://playwright.dev/\'>\n\n    def test_fail_timeout(page: Page):\n        page.goto("https://playwright.dev/")\n        # Fail: wait for element that never appears (timeout)\n>       expect(page.get_by_text("This will never appear")).to_be_visible(timeout=3000)\nE       AssertionError: Locator expected to be visible\nE       Actual value: <element(s) not found> \nE       Call log:\nE         - LocatorAssertions.to_be_visible with timeout 3000ms\nE         -   - waiting for get_by_text("This will never appear")\n\ntests/test_example.py:40: AssertionError', thread='77848-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['f9eb4d702042d26b1dce817f293f487b2df52f0c', '27a256f3c807318e5ab2f34fa25062541a7baee0'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Locator expected to be visible\nActual value: <element(s) not found> \nCall log:\n  - LocatorAssertions.to_be_visible with timeout 3000ms\n  -   - waiting for get_by_text("This will never appear")', defect=False), ResultCreate(id=None, title='test_fail_incorrect_attribute', signature='tests::test_example.py::test_fail_incorrect_attribute[chromium]::{browser_name:chromium}', testops_id=None, testops_ids=None, execution=ResultExecution(start_time=1751561018.0949051, end_time=1751561026.513804, status='failed', duration=8418, stacktrace='page = <Page url=\'https://playwright.dev/\'>\n\n    def test_fail_incorrect_attribute(page: Page):\n        page.goto("https://playwright.dev/")\n        # Fail: assert attribute that is wrong\n        elem = page.get_by_role("link", name="Get started")\n>       expect(elem).to_have_attribute("href", "/wrong-link")\nE       AssertionError: Locator expected to have attribute \'/wrong-link\'\nE       Actual value: /docs/intro \nE       Call log:\nE         - LocatorAssertions.to_have_attribute with timeout 5000ms\nE         -   - waiting for get_by_role("link", name="Get started")\nE         -     9 × locator resolved to <a href="/docs/intro" class="getStarted_Sjon">Get started</a>\nE         -       - unexpected value "/docs/intro"\n\ntests/test_example.py:47: AssertionError', thread='77848-MainThread'), fields=ResultCreateFields(author=None, description=None, preconditions=None, postconditions=None, layer=None, severity=None, priority=None, behavior=None, type=None, muted=None, is_flaky=None, executed_by=None, additional_properties={}), attachments=['1815de5eab21032fd11b91f46946967fff8ad707', '6b37bdf468ae93da305b11784cec576335832890'], steps=[], steps_type=<ResultStepsType.CLASSIC: 'classic'>, params={'browser_name': 'chromium'}, param_groups=[], relations=ResultRelations(suite=RelationSuite(data=[RelationSuiteItem(title='tests', public_id=None), RelationSuiteItem(title='test_example', public_id=None)])), message='AssertionError: Locator expected to have attribute \'/wrong-link\'\nActual value: /docs/intro \nCall log:\n  - LocatorAssertions.to_have_attribute with timeout 5000ms\n  -   - waiting for get_by_role("link", name="Get started")\n  -     9 × locator resolved to <a href="/docs/intro" class="getStarted_Sjon">Get started</a>\n  -       - unexpected value "/docs/intro"', defect=False)]
+[Qase][22:14:02][debug] Results for run 161 sent successfully
+[Qase][22:14:02][debug] Completing run
+[Qase][22:14:02][debug] Completing run 161
+[Qase][22:14:03][info] Test run link: https://app.qase.io/run/TD/dashboard/161
+[Qase][22:14:03][debug] Run completed
+[Qase][22:14:03][info] Overhead for Qase Report: 18308ms
